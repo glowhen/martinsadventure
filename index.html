@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Martin’s Adventure</title>
-  <meta
-  name="description"
-  content="Short fictional stories about Martin stumbling into business lessons—meal deals, leadership, and the occasional questionable decision."
-/>
-
+    <meta
+      name="description"
+      content="Short fictional stories about Martin stumbling into business lessons—meal deals, leadership, and the occasional questionable decision."
+    />
 
     <style>
       :root {
@@ -36,91 +35,140 @@
       a:hover { text-decoration: underline; }
 
       .container {
-        max-width: 980px;
+        max-width: 920px;
         margin: 0 auto;
-        padding: 24px;
+        padding: 22px 24px 40px;
       }
 
-      header {
+      /* Top bar (more like a simple editorial header) */
+      .topbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 16px;
-        padding: 12px 0 8px;
+        gap: 18px;
+        padding: 14px 0 10px;
       }
 
       .brand {
         display: flex;
         align-items: center;
         gap: 12px;
-        font-weight: 700;
-        letter-spacing: 0.02em;
+        min-width: 0;
       }
 
       .logo {
-        width: 38px;
-        height: 38px;
+        width: 40px;
+        height: 40px;
         border-radius: 12px;
         background: linear-gradient(135deg, #38bdf8, #a78bfa);
         box-shadow: var(--shadow);
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        flex: 0 0 auto;
+      }
+
+      .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+
+      .brand-title {
+        font-weight: 800;
+        letter-spacing: 0.01em;
+        line-height: 1.1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .brand-subtitle {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 650;
       }
 
       nav {
         display: flex;
-        gap: 16px;
+        gap: 14px;
         flex-wrap: wrap;
         color: var(--muted);
-        font-weight: 600;
+        font-weight: 650;
+        font-size: 14px;
+        justify-content: flex-end;
       }
 
-      .hero {
-        margin-top: 18px;
-        padding: 34px;
+      /* Martin image block under header */
+      .martin-photo {
+        margin-top: 14px;
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+        background: var(--card);
         box-shadow: var(--shadow);
-        position: relative;
         overflow: hidden;
       }
 
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: -80px -80px auto auto;
-        width: 240px;
-        height: 240px;
-        background: radial-gradient(circle at 30% 30%, rgba(56,189,248,0.45), transparent 60%);
-        transform: rotate(25deg);
-      }
-
-      .kicker {
+      .martin-photo .img {
+        width: 100%;
+        aspect-ratio: 21 / 9;
+        background: rgba(255,255,255,0.05);
+        display: grid;
+        place-items: center;
         color: var(--muted);
         font-weight: 700;
-        letter-spacing: 0.10em;
-        text-transform: uppercase;
-        font-size: 12px;
+        letter-spacing: 0.02em;
+      }
+
+      .martin-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .martin-photo .caption {
+        padding: 12px 14px;
+        border-top: 1px solid rgba(255,255,255,0.10);
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      /* Big intro (simple, cnewton-ish) */
+      .intro {
+        margin-top: 18px;
+        padding: 18px 0 6px;
       }
 
       h1 {
-        margin: 12px 0 10px;
-        font-size: clamp(34px, 5vw, 54px);
-        line-height: 1.05;
+        margin: 0 0 10px;
+        font-size: clamp(34px, 5vw, 56px);
+        line-height: 1.03;
+        letter-spacing: -0.01em;
       }
 
       .lead {
         margin: 0;
         color: var(--muted);
         font-size: 18px;
-        line-height: 1.55;
-        max-width: 62ch;
+        line-height: 1.6;
+        max-width: 70ch;
       }
 
       .cta-row {
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
-        margin-top: 18px;
+        margin-top: 16px;
       }
 
       .btn {
@@ -133,7 +181,7 @@
         border: 1px solid var(--line);
         background: var(--card);
         color: var(--text);
-        font-weight: 700;
+        font-weight: 750;
         cursor: pointer;
       }
 
@@ -145,11 +193,44 @@
 
       .btn:hover { filter: brightness(1.05); text-decoration: none; }
 
-      .grid {
-        margin-top: 18px;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 14px;
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.04);
+        color: var(--muted);
+        font-weight: 750;
+        font-size: 13px;
+      }
+
+      /* Section styling: simple, with a little “//” vibe */
+      .section {
+        margin-top: 26px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .section-title {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin: 0 0 12px;
+        font-size: 14px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .section-title span {
+        color: var(--text);
+        letter-spacing: 0.02em;
+        text-transform: none;
+        font-size: 18px;
+        font-weight: 850;
       }
 
       .card {
@@ -157,26 +238,22 @@
         border-radius: var(--radius);
         background: var(--card);
         box-shadow: var(--shadow);
-        padding: 18px;
-      }
-
-      .card h2 {
-        margin: 0 0 8px;
-        font-size: 18px;
+        padding: 16px;
       }
 
       .card p {
         margin: 0;
         color: var(--muted);
-        line-height: 1.55;
+        line-height: 1.6;
       }
 
-      .span-7 { grid-column: span 7; }
-      .span-5 { grid-column: span 5; }
-      .span-12 { grid-column: span 12; }
+      .split {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 14px;
+      }
 
-      .list {
-        margin-top: 10px;
+      .posts {
         display: grid;
         gap: 10px;
       }
@@ -191,124 +268,134 @@
         background: rgba(255,255,255,0.04);
       }
 
-      .post-title { font-weight: 800; }
+      .post-title { font-weight: 850; }
       .post-meta { color: var(--muted); font-size: 14px; }
 
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 10px;
-        border-radius: 999px;
-        border: 1px solid rgba(255,255,255,0.12);
-        background: rgba(255,255,255,0.04);
-        color: var(--muted);
-        font-weight: 700;
-        font-size: 13px;
-      }
-
       footer {
-        margin: 28px 0 10px;
+        margin-top: 32px;
         color: var(--muted);
         font-size: 14px;
         display: flex;
         justify-content: space-between;
         gap: 12px;
         flex-wrap: wrap;
+        border-top: 1px solid rgba(255,255,255,0.12);
+        padding-top: 16px;
       }
 
       @media (max-width: 820px) {
-        .span-7, .span-5 { grid-column: span 12; }
-        .hero { padding: 24px; }
+        .split { grid-template-columns: 1fr; }
+        .martin-photo .img { aspect-ratio: 16 / 10; }
       }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <header>
+      <!-- TOP BAR -->
+      <div class="topbar">
         <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <div>Martin’s Adventure</div>
+          <!-- LOGO PLACEHOLDER -->
+          <div class="logo" aria-label="Logo">
+            <!-- Put logo.png in the same folder as index.html -->
+            <!-- If you don't have it yet, leave this img tag as-is or remove it -->
+            <img src="logo.png" alt="Martin’s Adventure logo" onerror="this.remove()" />
+          </div>
+
+          <div class="brand-text">
+            <div class="brand-title">Martin’s Adventure</div>
+            <div class="brand-subtitle">Fiction • Business • Mild inconvenience</div>
+          </div>
         </div>
+
         <nav>
           <a href="#about">About</a>
           <a href="#posts">Blog</a>
           <a href="#contact">Contact</a>
         </nav>
-      </header>
+      </div>
 
-      <section class="hero">
-       <div class="kicker">Fiction • Business • Mild inconvenience</div>
+      <!-- MARTIN PHOTO (UNDER HEADER) -->
+      <section class="martin-photo" aria-label="Photo of Martin">
+        <!-- If martin.jpg exists, it will show; otherwise you’ll see the placeholder box -->
+        <img src="martin.jpg" alt="Martin (placeholder)" style="display:none" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" />
+        <div class="img" aria-hidden="true">[Placeholder: Martin’s picture goes here]</div>
+        <div class="caption">Martin, pictured moments before learning that the meal deal is “selected items only”.</div>
+      </section>
 
+      <!-- INTRO -->
+      <section class="intro">
         <h1>Adventures worth remembering.</h1>
-       <p class="lead">
-  Welcome to <strong>martinsadventure.com</strong>, where Martin goes about his day and
-  occasionally notices it’s teaching him things about business.
-  This includes the exciting world of struggling to buy a meal deal, taking up karate to
-  observe different leadership styles, and eventually starting his own business for reasons
-  that seemed sensible at the time.
-  <br /><br />
-  Exciting new stories coming soon...
-</p>
+        <p class="lead">
+          Welcome to <strong>martinsadventure.com</strong>, where Martin goes about his day and occasionally
+          notices it’s teaching him things about business. This includes the exciting world of struggling to buy
+          a meal deal, taking up karate to observe different leadership styles, and eventually starting his own
+          business for reasons that seemed sensible at the time.
+          <br /><br />
+          Exciting new stories coming soon…
+        </p>
 
         <div class="cta-row">
-          <a class="btn primary" href="#posts">Read Martin’s exciting life</a>
+          <a class="btn primary" href="#posts">Read the “exciting” bits</a>
           <a class="btn" href="#contact">Get updates</a>
           <span class="pill">🚧 Coming soon: newsletter + comments</span>
         </div>
       </section>
 
-      <section class="grid">
-        <div class="card span-7" id="about">
-          <h2>About</h2>
-        <p>
-  Martin’s Adventure is a blog told through short fictional stories about Martin — usually
-  at work, occasionally in trouble, and always learning something he didn’t ask to learn.
-  It’s business lessons via everyday situations: pricing, incentives, leadership, and the
-  strange gap between “how it should work” and “how it actually works”.
-</p>
+      <!-- ABOUT + CONTACT -->
+      <section class="section" id="about">
+        <div class="section-title">// <span>About</span></div>
 
+        <div class="split">
+          <div class="card">
+            <p>
+              Martin’s Adventure is a blog told through short fictional stories about Martin — usually at work,
+              occasionally in trouble, and always learning something he didn’t ask to learn. It’s business lessons via
+              everyday situations: pricing, incentives, leadership, and the strange gap between “how it should work”
+              and “how it actually works”.
+            </p>
+          </div>
+
+          <div class="card" id="contact">
+            <p>
+              Want to reach me? For now, the easiest option is email.
+              <br /><br />
+              <strong>contact@martinsadventure.com</strong>
+              <br />
+              <span style="color: var(--muted); font-size: 14px;">(We’ll set this up next when you’re ready.)</span>
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div class="card span-5" id="contact">
-          <h2>Contact</h2>
-          <p>
-            Want to reach me? For now, the easiest option is email.
-            <br /><br />
-            <strong>contact@martinsadventure.com</strong>
-            <br />
-            <span style="color: var(--muted); font-size: 14px;"
-              >(We’ll set this up next when you’re ready.)</span
-            >
-          </p>
-        </div>
+      <!-- POSTS -->
+      <section class="section" id="posts">
+        <div class="section-title">// <span>Latest posts</span></div>
 
-        <div class="card span-12" id="posts">
-          <h2>Latest posts</h2>
-          <p>Placeholder for now — once we add the blog, these will auto-populate.</p>
+        <div class="card">
+          <p style="margin-bottom: 12px;">Placeholder for now — once we add the blog, these will auto-populate.</p>
 
-          <div class="list" aria-label="Latest posts">
+          <div class="posts" aria-label="Latest posts">
             <div class="post">
               <div>
-                <div class="post-title">Coming soon: First post</div>
-                <div class="post-meta">A short intro + what this site will cover</div>
+                <div class="post-title">Coming soon: The Meal Deal Incident</div>
+                <div class="post-meta">Pricing, expectations, and a shocking lack of “selected items” clarity</div>
               </div>
               <div class="post-meta">Soon</div>
             </div>
 
             <div class="post">
               <div>
-                <div class="post-title">Coming soon: Photo notes</div>
-                <div class="post-meta">A simple gallery format</div>
+                <div class="post-title">Coming soon: Karate & middle management</div>
+                <div class="post-meta">Leadership styles, discipline, and why shouting rarely improves outcomes</div>
               </div>
               <div class="post-meta">Soon</div>
             </div>
 
             <div class="post">
               <div>
-                <div class="post-title">Coming soon: Gear I actually use</div>
-                <div class="post-meta">Practical kit list without the fluff</div>
+                <div class="post-title">Coming soon: Starting a business (for reasons)</div>
+                <div class="post-meta">Incentives, decisions, and hindsight arriving right on schedule</div>
               </div>
               <div class="post-meta">Soon</div>
             </div>
@@ -329,6 +416,3 @@
     </script>
   </body>
 </html>
-
-
-
