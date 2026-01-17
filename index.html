@@ -40,7 +40,7 @@
         padding: 22px 24px 40px;
       }
 
-      /* Top bar (more like a simple editorial header) */
+      /* Top bar (simple editorial header) */
       .topbar {
         display: flex;
         align-items: center;
@@ -97,14 +97,18 @@
         font-weight: 650;
       }
 
-      nav {
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-        color: var(--muted);
-        font-weight: 650;
+      /* Subnav under subtitle */
+      .subnav {
+        margin-top: 6px;
         font-size: 14px;
-        justify-content: flex-end;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .subnav a { color: inherit; }
+      .subnav span {
+        margin: 0 6px;
+        color: var(--muted);
       }
 
       /* Martin image block under header */
@@ -143,7 +147,7 @@
         line-height: 1.4;
       }
 
-      /* Big intro (simple, cnewton-ish) */
+      /* Big intro */
       .intro {
         margin-top: 18px;
         padding: 18px 0 6px;
@@ -206,7 +210,7 @@
         font-size: 13px;
       }
 
-      /* Section styling: simple, with a little “//” vibe */
+      /* Sections */
       .section {
         margin-top: 26px;
         padding-top: 18px;
@@ -298,29 +302,35 @@
           <!-- LOGO PLACEHOLDER -->
           <div class="logo" aria-label="Logo">
             <!-- Put logo.png in the same folder as index.html -->
-            <!-- If you don't have it yet, leave this img tag as-is or remove it -->
             <img src="logo.png" alt="Martin’s Adventure logo" onerror="this.remove()" />
           </div>
 
           <div class="brand-text">
             <div class="brand-title">Martin’s Adventure</div>
             <div class="brand-subtitle">Fiction • Business • Mild inconvenience</div>
+
+            <div class="subnav">
+              <a href="#about">About</a><span>·</span>
+              <a href="#posts">Blog</a><span>·</span>
+              <a href="#contact">Contact</a>
+            </div>
           </div>
         </div>
-
-        <nav>
-          <a href="#about">About</a>
-          <a href="#posts">Blog</a>
-          <a href="#contact">Contact</a>
-        </nav>
       </div>
 
       <!-- MARTIN PHOTO (UNDER HEADER) -->
       <section class="martin-photo" aria-label="Photo of Martin">
         <!-- If martin.jpg exists, it will show; otherwise you’ll see the placeholder box -->
-        <img src="martin.jpg" alt="Martin (placeholder)" style="display:none" onload="this.style.display='block'; this.nextElementSibling.style.display='none';" />
+        <img
+          src="martin.jpg"
+          alt="Martin (placeholder)"
+          style="display: none"
+          onload="this.style.display='block'; this.nextElementSibling.style.display='none';"
+        />
         <div class="img" aria-hidden="true">[Placeholder: Martin’s picture goes here]</div>
-        <div class="caption">Martin, pictured moments before learning that the meal deal is “selected items only”.</div>
+        <div class="caption">
+          Martin, pictured moments before learning that the meal deal is “selected items only”.
+        </div>
       </section>
 
       <!-- INTRO -->
@@ -416,4 +426,3 @@
     </script>
   </body>
 </html>
-
