@@ -68,17 +68,19 @@
       }
 
       /* Wide logo banner under subtitle */
-      .hero-logo {
-        margin: 12px 0 6px;
-        max-width: 100%;
-      }
+.hero-logo {
+  margin: 6px 0 10px;
+  max-width: 100%;
+}
 
-      .hero-logo img {
-        width: 100%;
-        max-width: 860px; /* "most of the width" */
-        height: auto;
-        display: block;
-      }
+.hero-logo img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 35px rgba(0, 0, 0, 0.55));
+}
+
 
       /* About/Blog/Contact under the logo */
       .subnav {
@@ -281,24 +283,24 @@
   <body>
     <div class="container">
       <!-- TOP AREA -->
-      <div class="topbar">
-        <div class="brand-text">
-          <div class="brand-title">Martin’s Adventure</div>
-          <div class="brand-subtitle">Fiction • Business • Mild inconvenience</div>
+ <div class="topbar">
+  <div class="brand-text">
 
-          <!-- WIDE LOGO BANNER -->
-          <div class="hero-logo">
-            <img src="logo.png" alt="Martin’s Adventure logo" />
-          </div>
+    <!-- MAIN LOGO TITLE -->
+    <div class="hero-logo">
+      <img src="logo.png" alt="Martin’s Adventure logo" />
+    </div>
 
-          <!-- SUBNAV UNDER LOGO -->
-          <div class="subnav">
-            <a href="#about">About</a><span>·</span>
-            <a href="#posts">Blog</a><span>·</span>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-      </div>
+    <div class="brand-subtitle">Fiction • Business • Mild inconvenience</div>
+
+    <div class="subnav">
+      <a href="#about">About</a><span>·</span>
+      <a href="#posts">Blog</a><span>·</span>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </div>
+</div>
 
       <!-- MARTIN PHOTO (UNDER HEADER) -->
       <section class="martin-photo" aria-label="Photo of Martin">
@@ -407,3 +409,4 @@
     </script>
   </body>
 </html>
+
