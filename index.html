@@ -51,15 +51,28 @@
 }
 
       /* Top nav (bigger, above logo) */
-      .topnav {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        padding: 18px 0 10px;
-        font-size: 18px;
-        font-weight: 700;
-        color: var(--text);
-      }
+   .topnav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 18px 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 15, 20, 0.85),
+    rgba(11, 15, 20, 0.65)
+  );
+  backdrop-filter: blur(8px);
+}
+
       .topnav .dot {
         color: var(--muted);
         font-weight: 700;
@@ -444,4 +457,5 @@
     </script>
   </body>
 </html>
+
 
