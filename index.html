@@ -224,4 +224,223 @@
         border-top: 1px solid rgba(255,255,255,0.12);
       }
 
-      .section-ti
+      .section-title {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin: 0 0 12px;
+        font-size: 14px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .section-title span {
+        color: var(--text);
+        letter-spacing: 0.02em;
+        text-transform: none;
+        font-size: 18px;
+        font-weight: 850;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--card);
+        box-shadow: var(--shadow);
+        padding: 16px;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 16px;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 14px;
+      }
+
+      .posts {
+        display: grid;
+        gap: 10px;
+      }
+
+      .post {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(255,255,255,0.10);
+        background: rgba(255,255,255,0.04);
+      }
+
+      .post-title { font-weight: 850; }
+      .post-meta { color: var(--muted); font-size: 14px; }
+
+      footer {
+        margin-top: 32px;
+        color: var(--muted);
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        border-top: 1px solid rgba(255,255,255,0.12);
+        padding-top: 16px;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-logo {
+          width: 80%;
+        }
+        .hero-photo {
+          max-width: 420px;
+          width: 100%;
+          justify-self: start;
+          margin-top: 16px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .topnav { font-size: 16px; }
+        .hero-logo { width: 100%; }
+        .hero-logo img { max-height: 200px; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <!-- BIG NAV ABOVE LOGO -->
+      <nav class="topnav" aria-label="Primary">
+        <a href="#about">About</a><span class="dot">·</span>
+        <a href="#posts">Blog</a><span class="dot">·</span>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- HERO: logo left, photo right -->
+      <header class="hero">
+        <div>
+          <div class="hero-logo">
+            <img src="logo.png" alt="Martin’s Adventure logo" />
+          </div>
+
+          <section class="intro">
+            <h1>Adventures worth learning.</h1>
+            <p class="lead">
+              Welcome to <strong>martinsadventure.com</strong>, where Martin goes about his day and occasionally
+              notices it’s teaching him things about business. This includes the exciting world of struggling to buy
+              a meal deal, taking up karate to observe different leadership styles, and eventually starting his own
+              business for reasons that seemed sensible at the time.
+              <br /><br />
+              Exciting new stories coming soon…
+            </p>
+
+            <div class="cta-row">
+              <a class="btn primary" href="#posts">Read the “exciting” bits</a>
+              <a class="btn" href="#contact">Get updates</a>
+              <span class="pill">🚧 Coming soon: newsletter + comments</span>
+            </div>
+          </section>
+        </div>
+
+        <aside class="hero-photo" aria-label="Photo of Martin">
+          <img
+            src="martin.jpg"
+            alt="Martin (placeholder)"
+            style="display: none"
+            onload="this.style.display='block'; this.nextElementSibling.style.display='none';"
+          />
+          <div class="img" aria-hidden="true">[Placeholder: Martin’s picture goes here]</div>
+          <div class="caption">
+            Martin, pictured moments before learning that the meal deal is “selected items only”.
+          </div>
+        </aside>
+      </header>
+
+      <!-- ABOUT + CONTACT -->
+      <section class="section" id="about">
+        <div class="section-title">// <span>About</span></div>
+
+        <div class="split">
+          <div class="card">
+            <p>
+              Martin’s Adventure is a blog told through short fictional stories about Martin — usually at work,
+              occasionally in trouble, and always learning something he didn’t ask to learn. It’s business lessons via
+              everyday situations: pricing, incentives, leadership, and the strange gap between “how it should work”
+              and “how it actually works”.
+            </p>
+          </div>
+
+          <div class="card" id="contact">
+            <p>
+              Want to reach me? For now, the easiest option is email.
+              <br /><br />
+              <strong>contact@martinsadventure.com</strong>
+              <br />
+              <span style="color: var(--muted); font-size: 14px;">(We’ll set this up next when you’re ready.)</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- POSTS -->
+      <section class="section" id="posts">
+        <div class="section-title">// <span>Latest posts</span></div>
+
+        <div class="card">
+          <p style="margin-bottom: 12px;">Placeholder for now — once we add the blog, these will auto-populate.</p>
+
+          <div class="posts" aria-label="Latest posts">
+            <div class="post">
+              <div>
+                <div class="post-title">Coming soon: The Meal Deal Incident</div>
+                <div class="post-meta">Pricing, expectations, and a shocking lack of “selected items” clarity</div>
+              </div>
+              <div class="post-meta">Soon</div>
+            </div>
+
+            <div class="post">
+              <div>
+                <div class="post-title">Coming soon: Karate & middle management</div>
+                <div class="post-meta">Leadership styles, discipline, and why shouting rarely improves outcomes</div>
+              </div>
+              <div class="post-meta">Soon</div>
+            </div>
+
+            <div class="post">
+              <div>
+                <div class="post-title">Coming soon: Starting a business (for reasons)</div>
+                <div class="post-meta">Incentives, decisions, and hindsight arriving right on schedule</div>
+              </div>
+              <div class="post-meta">Soon</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div>© <span id="year"></span> Martin’s Adventure</div>
+        <div>
+          <a href="#about">About</a> · <a href="#posts">Blog</a> · <a href="#contact">Contact</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      window.addEventListener("load", () => document.body.classList.add("ready"));
+    </script>
+  </body>
+</html>
