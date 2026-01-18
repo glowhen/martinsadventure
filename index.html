@@ -9,7 +9,7 @@
       content="Short fictional stories about Martin stumbling into business lessons—meal deals, leadership, and the occasional questionable decision."
     />
 
-    <!-- Inter font (clean, cnewton-like) -->
+    <!-- Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,7 +21,6 @@
       :root {
         --bg: #0b0f14;
         --card: rgba(255, 255, 255, 0.06);
-        --card2: rgba(255, 255, 255, 0.08);
         --text: rgba(255, 255, 255, 0.92);
         --muted: rgba(255, 255, 255, 0.68);
         --line: rgba(255, 255, 255, 0.14);
@@ -47,23 +46,22 @@
       .container {
         width: min(1400px, calc(100% - 48px));
         margin: 0 auto;
-        padding: 0 0 40px;
+        padding-bottom: 40px;
       }
 
-      /* Top nav (sticky) */
+      /* Sticky top nav */
       .topnav {
         position: sticky;
         top: 0;
         z-index: 1000;
 
         display: flex;
-        align-items: center;
         gap: 14px;
+        align-items: center;
 
         padding: 18px 0 10px;
         font-size: 18px;
         font-weight: 700;
-        color: var(--text);
 
         background: linear-gradient(
           to bottom,
@@ -73,61 +71,31 @@
         backdrop-filter: blur(8px);
       }
 
-      .topnav .dot {
-        color: var(--muted);
-        font-weight: 700;
-      }
+      .dot { color: var(--muted); }
 
-      /* Hero layout: left (logo + intro), right (photo) */
+      /* Hero */
       .hero {
         display: grid;
         grid-template-columns: 1.35fr 0.85fr;
         gap: 22px;
+        padding-top: 12px;
         align-items: start;
-        padding-top: 12px; /* space below sticky nav */
       }
 
-      /* Logo: ~3/4 size and left aligned */
       .hero-logo {
         width: 75%;
         max-width: 720px;
-        margin: 0;
       }
 
-      /* IMPORTANT: if your PNG has lots of transparent canvas,
-         max-height stops it creating huge blank space. */
       .hero-logo img {
         width: 100%;
-        height: auto;
-        max-height: 220px; /* tweak 180–260px to taste */
-        display: block;
+        max-height: 220px;
         object-fit: contain;
         object-position: left top;
-
+        display: block;
         filter: drop-shadow(0 10px 35px rgba(0, 0, 0, 0.55));
-
-        opacity: 0;
-        transform: translateY(6px);
-        transition: opacity 700ms ease, transform 700ms ease, filter 250ms ease;
       }
 
-      body.ready .hero-logo img {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .hero-logo img:hover {
-        filter:
-          drop-shadow(0 10px 35px rgba(0, 0, 0, 0.55))
-          drop-shadow(0 0 22px rgba(56, 189, 248, 0.28))
-          drop-shadow(0 0 26px rgba(167, 139, 250, 0.20));
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .hero-logo img { transition: none; transform: none; opacity: 1; }
-      }
-
-      /* Intro text under logo (left column) */
       .intro {
         margin-top: 12px;
       }
@@ -135,9 +103,8 @@
       h1 {
         margin: 0 0 10px;
         font-size: clamp(30px, 4.4vw, 52px);
-        line-height: 1.05;
-        letter-spacing: -0.02em;
         font-weight: 850;
+        letter-spacing: -0.02em;
       }
 
       .lead {
@@ -148,27 +115,22 @@
         max-width: 70ch;
       }
 
-      /* Right-side Martin picture */
+      /* Photo */
       .hero-photo {
-        margin-top: 6px;
+        max-width: 360px;
+        justify-self: end;
         border: 1px solid var(--line);
         border-radius: var(--radius);
         background: var(--card);
         box-shadow: var(--shadow);
         overflow: hidden;
-        max-width: 360px;
-        justify-self: end;
       }
 
       .hero-photo .img {
-        width: 100%;
         aspect-ratio: 4 / 5;
-        background: rgba(255,255,255,0.05);
         display: grid;
         place-items: center;
         color: var(--muted);
-        font-weight: 700;
-        letter-spacing: 0.02em;
         text-align: center;
         padding: 14px;
       }
@@ -177,15 +139,13 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        display: block;
       }
 
       .hero-photo .caption {
         padding: 10px 12px;
-        border-top: 1px solid rgba(255,255,255,0.10);
-        color: var(--muted);
+        border-top: 1px solid rgba(255,255,255,0.1);
         font-size: 13px;
-        line-height: 1.4;
+        color: var(--muted);
       }
 
       /* Sections */
@@ -197,73 +157,51 @@
 
       .section-title {
         display: flex;
-        align-items: baseline;
         gap: 10px;
-        margin: 0 0 12px;
+        margin-bottom: 12px;
         font-size: 14px;
-        letter-spacing: 0.12em;
         text-transform: uppercase;
+        letter-spacing: 0.12em;
         color: var(--muted);
         font-weight: 800;
       }
 
       .section-title span {
         color: var(--text);
-        letter-spacing: 0.02em;
-        text-transform: none;
         font-size: 18px;
-        font-weight: 850;
+        text-transform: none;
+        letter-spacing: 0.02em;
       }
 
       .card {
         border: 1px solid var(--line);
         border-radius: var(--radius);
         background: var(--card);
-        box-shadow: var(--shadow);
         padding: 16px;
+        box-shadow: var(--shadow);
       }
 
       .card p {
         margin: 0;
-        color: var(--muted);
         line-height: 1.7;
-        font-size: 16px;
-      }
-
-      .split {
-        display: grid;
-        grid-template-columns: 1.4fr 1fr;
-        gap: 14px;
+        color: var(--muted);
       }
 
       footer {
         margin-top: 32px;
-        color: var(--muted);
+        padding-top: 16px;
+        border-top: 1px solid rgba(255,255,255,0.12);
         font-size: 14px;
+        color: var(--muted);
         display: flex;
         justify-content: space-between;
-        gap: 12px;
         flex-wrap: wrap;
-        border-top: 1px solid rgba(255,255,255,0.12);
-        padding-top: 16px;
       }
 
-      /* Responsive */
       @media (max-width: 900px) {
         .hero { grid-template-columns: 1fr; }
-        .hero-logo { width: 80%; }
-        .hero-photo {
-          max-width: 420px;
-          width: 100%;
-          justify-self: start;
-          margin-top: 16px;
-        }
-      }
-
-      @media (max-width: 520px) {
-        .topnav { font-size: 16px; }
+        .hero-photo { margin-top: 16px; justify-self: start; }
         .hero-logo { width: 100%; }
-        .hero-logo img { max-height: 200px; }
       }
     </style>
   </head>
@@ -271,14 +209,14 @@
   <body>
     <div class="container">
 
-      <!-- BIG NAV ABOVE LOGO -->
-      <nav class="topnav" aria-label="Primary">
+      <!-- NAV -->
+      <nav class="topnav">
         <a href="#about">About</a><span class="dot">·</span>
         <a href="#posts">Blog</a><span class="dot">·</span>
         <a href="#contact">Contact</a>
       </nav>
 
-      <!-- HERO: logo left, photo right -->
+      <!-- HERO -->
       <header class="hero">
         <div>
           <div class="hero-logo">
@@ -289,57 +227,46 @@
             <h1>Adventures worth learning.</h1>
             <p class="lead">
               Welcome to <strong>martinsadventure.com</strong>, where Martin goes about his day and occasionally
-              notices it’s teaching him things about business. This includes the exciting world of struggling to buy
-              a meal deal, taking up karate to observe different leadership styles, and eventually starting his own
-              business for reasons that seemed sensible at the time.
+              notices it’s teaching him things about business.
               <br /><br />
               Exciting new stories coming soon…
             </p>
           </section>
         </div>
 
-        <aside class="hero-photo" aria-label="Photo of Martin">
-          <img
-            src="martin.jpg"
-            alt="Martin (placeholder)"
-            style="display: none"
-            onload="this.style.display='block'; this.nextElementSibling.style.display='none';"
-          />
-          <div class="img" aria-hidden="true">[Placeholder: Martin’s picture goes here]</div>
+        <aside class="hero-photo">
+          <div class="img">[Placeholder: Martin’s picture goes here]</div>
           <div class="caption">
             Martin, pictured moments before learning that the meal deal is “selected items only”.
           </div>
         </aside>
       </header>
 
-      <!-- ABOUT + CONTACT -->
+      <!-- ABOUT -->
       <section class="section" id="about">
         <div class="section-title">// <span>About</span></div>
-
-        <div class="split">
-          <div class="card">
-            <p>
-              Martin’s Adventure is a blog told through short fictional stories about Martin — usually at work,
-              occasionally in trouble, and always learning something he didn’t ask to learn. It’s business lessons via
-              everyday situations: pricing, incentives, leadership, and the strange gap between “how it should work”
-              and “how it actually works”.
-            </p>
-          </div>
-
-          <div class="card" id="contact">
-            <p>
-              Want to reach me? For now, the easiest option is email.
-              <br /><br />
-              <strong>contact@martinsadventure.com</strong>
-              <br />
-              <span style="color: var(--muted); font-size: 14px;">(We’ll set this up next when you’re ready.)</span>
-            </p>
-          </div>
+        <div class="card">
+          <p>
+            Martin’s Adventure is a blog told through short fictional stories about Martin — usually at work,
+            occasionally in trouble, and always learning something he didn’t ask to learn.
+          </p>
         </div>
       </section>
 
-      <!-- BLOG (kept so nav link works) -->
-   <section class="section" id="posts">
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <div class="section-title">// <span>Contact</span></div>
+        <div class="card">
+          <p>
+            Want to reach me? For now, the easiest option is email.
+            <br /><br />
+            <strong>contact@martinsadventure.com</strong>
+          </p>
+        </div>
+      </section>
+
+      <!-- BLOG ANCHOR ONLY -->
+      <section id="posts" style="scroll-margin-top: 90px;"></section>
 
       <footer>
         <div>© <span id="year"></span> Martin’s Adventure</div>
@@ -347,12 +274,11 @@
           <a href="#about">About</a> · <a href="#posts">Blog</a> · <a href="#contact">Contact</a>
         </div>
       </footer>
+
     </div>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
-      window.addEventListener("load", () => document.body.classList.add("ready"));
     </script>
   </body>
 </html>
-
