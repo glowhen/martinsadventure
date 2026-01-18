@@ -80,12 +80,14 @@
 
       /* Hero layout: left (logo + intro), right (photo) */
       .hero {
-        display: grid;
-        grid-template-columns: 1.35fr 0.85fr;
-        gap: 22px;
-        align-items: start;
-        padding-top: 0; /* no top gap */
-      }
+      .hero {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 22px;
+  align-items: start;
+  padding-top: 12px; /* space below sticky nav */
+}
+
 
       /* Logo: ~3/4 size and left aligned */
       .hero-logo {
@@ -457,5 +459,6 @@
     </script>
   </body>
 </html>
+
 
 
