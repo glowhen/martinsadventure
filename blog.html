@@ -1,1 +1,517 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog — Martin’s Adventure</title>
+    <meta
+      name="description"
+      content="Short fictional stories about Martin stumbling into business lessons—meal deals, leadership, and the occasional questionable decision."
+    />
 
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --card: rgba(255, 255, 255, 0.06);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.68);
+        --line: rgba(255, 255, 255, 0.14);
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+        --radius: 18px;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background:
+          radial-gradient(1200px 800px at 20% 10%, #162033 0%, var(--bg) 55%),
+          radial-gradient(900px 700px at 90% 25%, #2a1633 0%, transparent 55%),
+          var(--bg);
+        color: var(--text);
+      }
+
+      a { color: inherit; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .container {
+        width: min(1400px, calc(100% - 48px));
+        margin: 0 auto;
+        padding-bottom: 40px;
+      }
+
+      /* Sticky top nav */
+      .topnav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+        display: flex;
+        gap: 14px;
+        align-items: center;
+
+        padding: 18px 0 10px;
+        font-size: 18px;
+        font-weight: 700;
+
+        background: linear-gradient(
+          to bottom,
+          rgba(11, 15, 20, 0.85),
+          rgba(11, 15, 20, 0.65)
+        );
+        backdrop-filter: blur(8px);
+      }
+
+      .dot { color: var(--muted); }
+
+      /* Page header */
+      .pagehead {
+        padding: 22px 0 6px;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: clamp(30px, 4.4vw, 52px);
+        font-weight: 850;
+        letter-spacing: -0.02em;
+      }
+
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.65;
+        max-width: 75ch;
+      }
+
+      /* Shared card style */
+      .card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--card);
+        box-shadow: var(--shadow);
+      }
+
+      /* Notion-ish layout */
+      .layout {
+        margin-top: 34px;
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 18px;
+        align-items: start;
+      }
+
+      .featured {
+        padding: 18px;
+        overflow: hidden;
+      }
+
+      .featured-inner {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .kicker {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        font-weight: 800;
+        margin: 0 0 8px;
+      }
+
+      .featured h2 {
+        margin: 0 0 10px;
+        font-size: clamp(22px, 2.2vw, 30px);
+        letter-spacing: -0.02em;
+        line-height: 1.18;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        color: var(--muted);
+        font-size: 13px;
+        margin: 0 0 12px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.16);
+        background: rgba(255,255,255,0.04);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 650;
+      }
+
+      .excerpt {
+        margin: 0 0 14px;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 15px;
+        max-width: 80ch;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.18);
+        background: rgba(255,255,255,0.06);
+        font-weight: 800;
+      }
+      .cta:hover { text-decoration: none; background: rgba(255,255,255,0.09); }
+
+      .thumb {
+        border-radius: calc(var(--radius) - 4px);
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(0,0,0,0.22);
+        overflow: hidden;
+        min-height: 220px;
+      }
+
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: saturate(1.05) contrast(1.05);
+      }
+
+      /* Sidebar (filters / about) */
+      .side {
+        padding: 16px;
+      }
+
+      .side h3 {
+        margin: 0 0 10px;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+      }
+
+      .side p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 14px;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      /* Posts grid */
+      .section {
+        margin-top: 28px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .section-title {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 12px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .section-title span {
+        color: var(--text);
+        font-size: 18px;
+        text-transform: none;
+        letter-spacing: 0.02em;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .post {
+        padding: 14px;
+        transition: transform 160ms ease, background 160ms ease;
+      }
+
+      .post:hover {
+        transform: translateY(-2px);
+        background: rgba(255,255,255,0.07);
+        text-decoration: none;
+      }
+
+      .post .post-thumb {
+        border-radius: calc(var(--radius) - 8px);
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(0,0,0,0.22);
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        margin-bottom: 12px;
+      }
+
+      .post .post-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .post h4 {
+        margin: 0 0 8px;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+      }
+
+      .post .post-meta {
+        margin: 0 0 10px;
+        color: var(--muted);
+        font-size: 13px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .post .post-excerpt {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 14px;
+      }
+
+      footer {
+        margin-top: 32px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255,255,255,0.12);
+        font-size: 14px;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1100px) {
+        .grid { grid-template-columns: repeat(2, 1fr); }
+      }
+
+      @media (max-width: 900px) {
+        .layout { grid-template-columns: 1fr; }
+        .featured-inner { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 620px) {
+        .grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <!-- NAV -->
+      <nav class="topnav">
+        <a href="index.html#about">About</a><span class="dot">·</span>
+        <a href="blog.html" aria-current="page">Blog</a><span class="dot">·</span>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <!-- PAGE HEADER -->
+      <header class="pagehead">
+        <h1>Blog</h1>
+        <p class="lead">
+          Short fictional stories about Martin—usually at work, occasionally in trouble, always learning something
+          he didn’t ask to learn.
+        </p>
+      </header>
+
+      <!-- FEATURED + SIDEBAR -->
+      <section class="layout">
+        <!-- Featured post -->
+        <article class="card featured">
+          <div class="featured-inner">
+            <div>
+              <p class="kicker">Featured</p>
+              <h2>
+                <a href="blog/meal-deal.html">The Meal Deal That Became a Pricing Strategy</a>
+              </h2>
+
+              <p class="meta">
+                <span>Jan 12, 2026</span>
+                <span class="pill">Pricing</span>
+                <span class="pill">Decision-making</span>
+                <span class="pill">7 min read</span>
+              </p>
+
+              <p class="excerpt">
+                Martin attempts to buy a “simple” meal deal and accidentally discovers why bundles,
+                anchors, and tiny constraints can make otherwise sensible people do strange things.
+              </p>
+
+              <a class="cta" href="blog/meal-deal.html">
+                Read article <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <div class="thumb">
+              <!-- Replace with your own image for the featured post -->
+              <img src="blog-images/meal-deal.jpg" alt="A meal deal (placeholder image)" />
+            </div>
+          </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="card side">
+          <h3>Browse by tag</h3>
+          <p>
+            These are just visual filters for now (no JS). If you want real filtering/search,
+            tell me and I’ll add it.
+          </p>
+
+          <div class="tags">
+            <span class="pill">Leadership</span>
+            <span class="pill">Pricing</span>
+            <span class="pill">Product</span>
+            <span class="pill">Negotiation</span>
+            <span class="pill">Communication</span>
+            <span class="pill">Career</span>
+          </div>
+
+          <div style="height: 14px"></div>
+
+          <h3>Want updates?</h3>
+          <p>
+            For now, just email <strong>contact@martinsadventure.com</strong> and I’ll let you know when new stories land.
+          </p>
+        </aside>
+      </section>
+
+      <!-- POSTS GRID -->
+      <section class="section" aria-label="All blog posts">
+        <div class="section-title">// <span>All posts</span></div>
+
+        <div class="grid">
+          <!-- Post 1 -->
+          <a class="card post" href="blog/meal-deal.html">
+            <div class="post-thumb">
+              <img src="blog-images/meal-deal.jpg" alt="Meal deal placeholder" />
+            </div>
+            <h4>The Meal Deal That Became a Pricing Strategy</h4>
+            <p class="post-meta">
+              <span>Jan 12, 2026</span><span class="pill">Pricing</span><span class="pill">7 min</span>
+            </p>
+            <p class="post-excerpt">
+              Martin learns why bundles work, why “value” isn’t a number, and why his sandwich choice
+              turns into a spreadsheet in his head.
+            </p>
+          </a>
+
+          <!-- Post 2 -->
+          <a class="card post" href="blog/karate-leadership.html">
+            <div class="post-thumb">
+              <img src="blog-images/karate.jpg" alt="Karate placeholder" />
+            </div>
+            <h4>Karate Class and the Three Leadership Styles</h4>
+            <p class="post-meta">
+              <span>Dec 02, 2025</span><span class="pill">Leadership</span><span class="pill">6 min</span>
+            </p>
+            <p class="post-excerpt">
+              A new belt, an old ego, and a surprise lesson: clarity beats intensity, and feedback
+              isn’t the same thing as volume.
+            </p>
+          </a>
+
+          <!-- Post 3 -->
+          <a class="card post" href="blog/starting-a-business.html">
+            <div class="post-thumb">
+              <img src="blog-images/business.jpg" alt="Business placeholder" />
+            </div>
+            <h4>Starting a Business for Reasons That Seemed Sensible</h4>
+            <p class="post-meta">
+              <span>Nov 10, 2025</span><span class="pill">Product</span><span class="pill">8 min</span>
+            </p>
+            <p class="post-excerpt">
+              Martin “validates” an idea by asking exactly one friend. It goes about as well as you’d expect.
+            </p>
+          </a>
+
+          <!-- Post 4 -->
+          <a class="card post" href="blog/one-more-meeting.html">
+            <div class="post-thumb">
+              <img src="blog-images/meeting.jpg" alt="Meeting placeholder" />
+            </div>
+            <h4>One More Meeting: The Myth of Alignment</h4>
+            <p class="post-meta">
+              <span>Oct 21, 2025</span><span class="pill">Communication</span><span class="pill">5 min</span>
+            </p>
+            <p class="post-excerpt">
+              Martin schedules “one quick sync” and accidentally invents a new calendar-based form of suffering.
+            </p>
+          </a>
+
+          <!-- Post 5 -->
+          <a class="card post" href="blog/the-email-thread.html">
+            <div class="post-thumb">
+              <img src="blog-images/email.jpg" alt="Email placeholder" />
+            </div>
+            <h4>The Email Thread That Wouldn’t Die</h4>
+            <p class="post-meta">
+              <span>Sep 18, 2025</span><span class="pill">Negotiation</span><span class="pill">6 min</span>
+            </p>
+            <p class="post-excerpt">
+              Martin learns that “just circling back” is a negotiation tactic only if you’re negotiating against time.
+            </p>
+          </a>
+
+          <!-- Post 6 -->
+          <a class="card post" href="blog/first-day-boss.html">
+            <div class="post-thumb">
+              <img src="blog-images/first-day.jpg" alt="First day placeholder" />
+            </div>
+            <h4>Your First Day as a Boss (Accidentally)</h4>
+            <p class="post-meta">
+              <span>Aug 30, 2025</span><span class="pill">Career</span><span class="pill">7 min</span>
+            </p>
+            <p class="post-excerpt">
+              Martin gets put “in charge” and discovers the fastest way to lose trust is to pretend you already know.
+            </p>
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <div>© <span id="year"></span> Martin’s Adventure</div>
+        <div>
+          <a href="index.html#about">About</a> · <a href="blog.html">Blog</a> · <a href="index.html#contact">Contact</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
