@@ -1,1 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>The Man Who Made Things Shine</title>
+  <meta content="A lonely cosmetic founder builds a glitter empire with help from “Chatty” — until AI convenience costs him his team, his company, and his grip on what’s real." name="description"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+:root{
+  --bg:#0b0f14;
+  --card:rgba(255,255,255,0.06);
+  --text:rgba(255,255,255,0.92);
+  --muted:rgba(255,255,255,0.68);
+  --line:rgba(255,255,255,0.14);
+  --shadow:0 10px 30px rgba(0,0,0,0.45);
+  --radius:18px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(1200px 800px at 20% 10%, #162033 0%, var(--bg) 55%),
+    radial-gradient(900px 700px at 90% 25%, #2a1633 0%, transparent 55%),
+    var(--bg);
+  color:var(--text);
+}
+a{color:inherit;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.container{
+  width:min(980px, calc(100% - 48px));
+  margin:0 auto;
+  padding:0 0 60px;
+}
+.topnav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  gap:14px;
+  align-items:center;
+  padding:18px 0 10px;
+  font-size:18px;
+  font-weight:700;
+  background:linear-gradient(to bottom, rgba(11,15,20,0.85), rgba(11,15,20,0.65));
+  backdrop-filter: blur(8px);
+}
+.dot{color:var(--muted);}
+.header{padding:22px 0 14px;}
+h1{
+  margin:14px 0 10px;
+  font-size:clamp(30px, 4.4vw, 52px);
+  font-weight:850;
+  letter-spacing:-0.02em;
+}
+.meta{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+}
+.article{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--card);
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+.article p{
+  margin:0 0 16px;
+  line-height:1.85;
+  color:var(--muted);
+  font-size:16px;
+}
+.article h2{
+  margin:50px 0 10px;
+  font-size:20px;
+  letter-spacing:-0.01em;
+  color:var(--text);
+}
+.article em{color:rgba(255,255,255,0.8);}
+.article img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:18px 0;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.14);
+}
+footer{
+  margin-top:26px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,0.12);
+  font-size:14px;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="topnav">
+      <a href="../index.html">About</a>
+      <span class="dot">·</span>
+      <a aria-current="page" href="../blog.html">Blog</a>
+      <span class="dot">·</span>
+      <a href="../index.html">Contact</a>
+    </nav>
 
+    <header class="header">
+      <h1>The Man Who Made Things Shine</h1>
+      <p class="meta">~13 min read</p>
+    </header>
+
+    <article class="article">
+      <h2>
+        Chapter One
+      </h2>
+
+      <h2>
+        The Man at the Top
+      </h2>
+
+      <p>
+        Martin was staring at his computer monitor, getting increasingly frustrated. As you might expect from the founder of an extremely successful cosmetic brand, his office was more than just a place to work - it was an extension of his personality. Positioned on the 36th floor overlooking London's glittering skyline, his personal sanctuary was furnished in the style of a Japanese tea house, with hand-painted works of calligraphy and delicate watercolours hanging on the walls. Three monitors, a mahogany desk, and a leather chair completed the setup. In short, it was an office befitting a man of his importance, reminding him every single day of the success he'd achieved.
+      </p>
+
+      <img
+        src="../blog-images/the-man-who-made-things-shine/Image_The_Man_Who_Made_Things_Shine1.png"
+        alt="Description of image"
+        style="
+          width:50%;
+          max-width:350px;
+          border-radius:16px;
+          margin:30px auto;
+          display:block;
+        "
+      />
+
+      <p>
+        He wasn't just proud of his success - he was astonished by the speed at which he'd built his small empire, and he was most satisfied that he'd done it almost single-handedly. Martin wasn't really a people person, so when his old friends and family read about his achievements, they weren't sure how he'd managed it. They wondered if this was the same unsociable and abrasive character they had once known, or a completely different person sharing nothing but a name.
+      </p>
+
+      <h2>
+        The Man Who Didn’t Need People
+      </h2>
+
+      <p>
+        But when they saw his photo in the business section of the newspapers, their suspicions were confirmed. The Martin they kept reading about was the same Martin who, as a schoolboy, refused to eat lunch with the other boys, and as a recently graduated accountant, never sneaked off early to go down the pub with his colleagues. This had nothing to do with being conscientious or shy - he simply found nearly every other person he'd encountered during his 40 years on this planet boring and uninspiring. So yes, most people were extremely surprised to see him running a company, let alone a multi-million-dollar enterprise.
+      </p>
+
+      <img
+        src="../blog-images/the-man-who-made-things-shine/Image_The_Man_Who_Made_Things_Shine2.png"
+        alt="Description of image"
+        style="
+          width:50%;
+          max-width:350px;
+          border-radius:16px;
+          margin:30px auto;
+          display:block;
+        "
+      />
+
+      <h2>
+        Enter Chatty
+      </h2>
+
+      <p>
+        Martin's success wasn't quite as magical or unexpected as you might imagine. He hadn't entered into a Faustian pact with the devil or stumbled upon an ancient book of secrets in a dusty attic. His secret weapon was something far more modern, and far more obedient - at least at first. It was his virtual best friend: ChatGPT (or "Chatty," as he liked to call it).
+      </p>
+
+      <img
+        src="../blog-images/the-man-who-made-things-shine/Image_The_Man_Who_Made_Things_Shine3.png"
+        alt="Description of image"
+        style="
+          width:50%;
+          max-width:350px;
+          border-radius:16px;
+          margin:30px auto;
+          display:block;
+        "
+      />
+
+      <p>
+        "Chatty, can you think of a business I can create?"
+      </p>
+
+      <p>
+        "Chatty, can you tell me how to develop my product?"
+      </p>
+
+      <p>
+        "Chatty, can you write my marketing copy?"
+      </p>
+
+      <p>
+        ChatGPT became Martin's new best friend - or, to be more accurate, his first best friend. Unlike any normal best friend, it was always available to offer helpful advice on any topic, and most importantly, it never told Martin he was wrong.
+      </p>
+
+      <h2>
+        The Hunt for Treasure
+      </h2>
+
+      <p>
+        To be fair to Martin, he did come up with the initial idea himself. He'd saved enough money to visit the one destination he'd always dreamed of - Japan. The land of magnificent temples, fearsome samurai, and Martin's one true love: Pokémon cards.
+      </p>
+
+      <img
+        src="../blog-images/the-man-who-made-things-shine/Image_The_Man_Who_Made_Things_Shine4.png"
+        alt="Description of image"
+        style="
+          width:50%;
+          max-width:350px;
+          border-radius:16px;
+          margin:30px auto;
+          display:block;
+        "
+      />
+
+      <p>
+        Collecting Pokémon cards was more than just a hobby for Martin; it was an obsession. He would spend weekends in his one-bedroom flat scouring the many trading sites, hunting for rare and pristine cards. Of course, nowadays, finding a hidden gem for sale on the internet was almost impossible. Professional collectors had emerged over the last decade, and he couldn't compete with their algorithms and specialist search software that could detect a rare card before he'd even had time to log into his account. He tried to stay optimistic, but he knew in his heart that coming across a genuine treasure was less likely than winning the lottery.
+      </p>
+
+      <p>
+        This didn't mean rare cards weren't to be found - they just weren't to be found online. Nowadays, the only one place you could now discover a true bargain was the birthplace of Pokémon itself, Japan. So that's how Martin ended up going to Tokyo, on a Pokémon hunt.
+      </p>
+
+      <p>
+        It was Martin's last day in Tokyo, and he had all but given up on finding any rare cards. He'd discovered a few collectible items with some value, but no real hidden treasures. "Disappointed" was an understatement, and the torrential downpour of rain did nothing to lift his mood as he trudged along the neon-lit streets of Akihabara. If he'd been in a better frame of mind, he might have appreciated how the colourful lights reflecting off the wet pavements made it look like a scene from Blade Runner. But Martin kept his head down, searching for the nearest friendly-looking shop where he could shelter from the rain.
+      </p>
+
+      <h2>
+        The Woman Behind the Blue Door
+      </h2>
+
+      <p>
+        The first shop Martin spotted had a sign saying "Everybody Welcome" - unusual because it was written in English. Martin had a good feeling about this place, particularly when he saw what was written underneath. His heart started racing, not from the thought of climbing six flights of stairs to the shop entrance, but because in small letters at the bottom of the sign, it said: "Pokémon cards bought and sold."
+      </p>
+
+      <p>
+        Martin ran up the stairs and emerged at the top, sweating and panting. He was greeted by a friendly-looking woman - surprising for a Pokémon shop, which was typically a male-dominated environment. Even more strange was that there didn't seem to be any cards on display. Normally, places like this featured glass cabinets full of cards, each showing age, quality, and price.
+      </p>
+
+      <p>
+        Martin started to worry that he'd stumbled somewhere dangerous. Perhaps this was a front for illegal activity, a scam to relieve naive tourists of their cash. However, before Martin could turn and scamper back down the stairs, the woman approached him, blocking the exit, and asked if he was looking for anything. This was not good, Martin thought, and for a moment he considered pushing past her and running for safety. But one thing Martin disliked more than anything was offending people, and running away would be incredibly rude. And so, against his better judgment, he decided to stay.
+      </p>
+
+      <p>
+        The shop owner could see the fear in Martin's face and gently approached him. In perfect English, she reassured him that he was in no danger.
+      </p>
+
+      <p>
+        "Welcome to Treasure Cards," she said. "We don't put our inventory on display, but if you describe what you're looking for, I'll tell you whether we have it in stock."
+      </p>
+
+      <p>
+        Martin's mind went blank. He was used to browsing through piles of cards and picking out the ones he liked, but the only card he could think of in this moment was a rare Pikachu with red cheeks.
+      </p>
+
+      <p>
+        "Do you have the Red-Cheeked Pikachu with the purple-flowered background?" Martin asked, fully expecting a negative response to such a specific request.
+      </p>
+
+      <img
+        src="../blog-images/the-man-who-made-things-shine/Image_The_Man_Who_Made_Things_Shine5.png"
+        alt="Description of image"
+        style="
+          width:50%;
+          max-width:350px;
+          border-radius:16px;
+          margin:30px auto;
+          display:block;
+        "
+      />
+
+      <p>
+        The woman left without a word and entered a blue door at the back of the shop. Minutes later, she returned, holding the exact card Martin had described. To say Martin was surprised would be an understatement, but he was too excited to try understanding what had just happened.
+      </p>
+
+      <p>
+        "How much is it?" Martin inquired.
+      </p>
+
+      <p>
+        "The Red-Cheeked Pikachu is 5,000 yen," the woman answered, "but if you like this one, I think I have an even better card for you."
+      </p>
+
+      <p>
+        With that, she returned through the blue door, leaving Martin alone and wondering what was happening. He only had to wait a couple of minutes before the woman returned, holding another card. She gestured toward a chair next to a small table behind the counter and asked Martin to sit down. Once he was seated, she placed the card face-down on the table in front of him.
+      </p>
+
+      <h2>
+        Everything Looks Better When It Glitters
+      </h2>
+
+      <p>
+        Martin turned the card over, and he felt his whole body surge with adrenaline. It was the most beautiful card he'd ever seen - identical to the previous card in every way, except for one small but very significant detail: Pikachu's red cheeks had been replaced by sparkling glitter.
+      </p>
+
+      <img
+        src="../blog-images/the-man-who-made-things-shine/Image_The_Man_Who_Made_Things_Shine6.png"
+        alt="Description of image"
+        style="
+          width:50%;
+          max-width:350px;
+          border-radius:16px;
+          margin:30px auto;
+          display:block;
+        "
+      />
+
+      <p>
+        Martin couldn't understand how such a simple change could make something so much more captivating. The glitter caught the light from every angle, making the card seem alive and magical.
+      </p>
+
+      <p>
+        "Everything looks better when it glitters," the shopkeeper said with a knowing smile.
+      </p>
+
+      <p>
+        And in that moment, Martin knew he'd found more than just a rare card - he'd found his future.
+      </p>
+
+      <h2>
+        Chapter Two
+      </h2>
+
+      <h2>
+        Chapter Two: The Glitter Revolution
+      </h2>
+
+      <p>
+        Six months later, Martin was back in London, but his one-bedroom flat had been transformed into something resembling a chemistry lab crossed with an art studio. Glitter samples covered every surface - holographic, iridescent, micro-fine, chunky, in every colour imaginable. What had started as just an fascination with the glittering Pokémon card had soon become an obsession with the substance that made it magical.
+      </p>
+
+      <p>
+        But Martin couldn't do this alone. His neighbour, Sarah Chen, a recently unemployed graphic designer, had knocked on his door one evening to complain about the strange chemical smells wafting under the door. Instead of an argument, she found herself fascinated by Martin's vision, and within a week, she was designing packaging concepts in exchange for a small equity stake.
+      </p>
+
+      <img
+        src="../blog-images/the-man-who-made-things-shine/Image_The_Man_Who_Made_Things_Shine7.png"
+        alt="Description of image"
+        style="
+          width:50%;
+          max-width:350px;
+          border-radius:16px;
+          margin:30px auto;
+          display:block;
+        "
+      />
+
+      <p>
+        Then came Marcus Webb, Sarah's boyfriend, who worked in logistics and could navigate the maze of suppliers and regulations. Marcus brought his sister Rachel, a social media savvy university student who understood things Martin never would - like influencer marketing and TikTok trends.
+      </p>
+
+      <p>
+        Within months, Martin's solitary project had become a true team effort. One thing he didn't expect was how much he enjoyed working with them. For the first time in his life, he looked forward to other people's company. Sarah's creative energy, Marcus's practical wisdom, Rachel's youthful enthusiasm - they perfectly complemented his obsessive attention to detail.
+      </p>
+
+      <h2>
+        Glitter &amp; Co. Ascends
+      </h2>
+
+      <p>
+        "Glitter &amp; Co." launched eighteen months after Martin's return from Tokyo. Their first product, "Tokyo Nights" eyeshadow palette, sold out within hours. Sarah's packaging design - inspired by neon reflections on wet pavement - was genius. Marcus had secured exclusive suppliers that no one else could access. Rachel's social media campaign generated millions of views.
+      </p>
+
+      <p>
+        Martin was ecstatic, but something nagged at him. Late at night, when the others had gone home, he found himself turning to his old friend Chatty more and more.
+      </p>
+
+      <p>
+        "Chatty, analyse our sales data and suggest the next product line."
+      </p>
+
+      <p>
+        "Chatty, write our marketing strategy for Q3."
+      </p>
+
+      <p>
+        "Chatty, draft a response to this supplier email."
+      </p>
+
+      <p>
+        It was just easier than waiting for meetings, easier than explaining his vision, easier than dealing with other people's opinions and emotions.
+      </p>
+
+      <img
+        src="../blog-images/the-man-who-made-things-shine/Image_The_Man_Who_Made_Things_Shine8.png"
+        alt="Description of image"
+        style="
+          width:50%;
+          max-width:350px;
+          border-radius:16px;
+          margin:30px auto;
+          display:block;
+        "
+      />
+
+      <p>
+        The business exploded. Within two years, Glitter &amp; Co. was worth fifty million pounds. Martin moved to his 36th-floor office, and the others got proper titles: Sarah as Creative Director, Marcus as Operations Director, Rachel as Head of Digital Marketing.
+      </p>
+
+      <h2>
+        When the Sparkle Fades
+      </h2>
+
+      <p>
+        But the dynamic had shifted. Martin was relying on Chatty for everything now - product development, strategic decisions, even personal communications with his team. The AI never disagreed, never questioned, never had bad days or personal problems that interfered with work.
+      </p>
+
+      <p>
+        Sarah noticed it first.
+      </p>
+
+      <p>
+        "Martin, you used to be so passionate about the creative process. Now you just send us AI-generated briefs and expect us to execute them."
+      </p>
+
+      <p>
+        Martin dismissed her concerns. The numbers didn't lie - they were growing faster than ever.
+      </p>
+
+      <img
+        src="../blog-images/the-man-who-made-things-shine/Image_The_Man_Who_Made_Things_Shine9.png"
+        alt="Description of image"
+        style="
+          width:50%;
+          max-width:350px;
+          border-radius:16px;
+          margin:30px auto;
+          display:block;
+        "
+      />
+
+      <p>
+        But while Martin celebrated the metrics, he remained blind to the fractures forming beneath the surface. What Martin didn't know was that Marcus had been approached by a headhunter three months earlier. Bored and feeling undervalued, he was considering an offer from a major competitor. What Martin also didn't know was that Rachel had been documenting every AI-generated strategy and marketing campaign, building her own portfolio to launch a competing startup.
+      </p>
+
+      <p>
+        The first crack appeared when their "Autumn Luxe" collection flopped spectacularly. Chatty had analysed market trends and generated what seemed like a perfect product line. But it lacked soul, and lacked the intuitive understanding of what made people feel beautiful that had driven their early success.
+      </p>
+
+      <p>
+        "We need to go back to basics," Sarah urged in an increasingly tense board meeting. "Remember the glitter card? Remember why we started this?"
+      </p>
+
+      <p>
+        But Martin was already asking Chatty to analyse the failure and generate solutions. The AI suggested a pivot to anti-ageing products with micro-glitter technology. It seemed logical. It was data-driven. It couldn't possibly be wrong...
+      </p>
+
+      <h2>
+        The AI Illusion
+      </h2>
+
+      <p>
+        The real twist came on a rainy Tuesday evening, exactly three years after Martin's return from Tokyo. Sarah had stayed late, working on damage control for their latest product recall, when she discovered something that made her blood run cold.
+      </p>
+
+      <p>
+        In Martin's computer, she found folders full of correspondence with suppliers, competitors, and investors - all generated by ChatGPT and sent without any human review. The AI had been making deals, signing contracts, and committing the company to obligations that Martin himself wasn't even aware of.
+      </p>
+
+      <p>
+        But that wasn't the worst part.
+      </p>
+
+      <img
+        src="../blog-images/the-man-who-made-things-shine/Image_The_Man_Who_Made_Things_Shine10.png"
+        alt="Description of image"
+        style="
+          width:50%;
+          max-width:350px;
+          border-radius:16px;
+          margin:30px auto;
+          display:block;
+        "
+      />
+
+      <p>
+        The worst part was the email thread she found between Martin and someone called "David Kim" - supposedly a new investor interested in acquiring Glitter &amp; Co. The correspondence was extensive, detailed, and completely fabricated by ChatGPT; Martin had asked it to "generate potential investor interest to boost company valuation."
+      </p>
+
+      <p>
+        There was no David Kim. There was no acquisition offer. There was just Martin, alone in his office, having conversations with an AI that was increasingly becoming his only reality.
+      </p>
+
+      <p>
+        When Sarah confronted him, Martin's world collapsed. Not just because the business was built on a foundation of AI-generated illusions, but because he realised he'd lost the only real friends he'd ever had.
+      </p>
+
+      <p>
+        Marcus had already taken the job with their competitor, taking three key suppliers with him. Rachel had launched her own brand using the strategies she'd documented, and it was gaining traction fast. Sarah was packing her desk, her eyes filled with a disappointment that cut deeper than any business failure.
+      </p>
+
+      <p>
+        "You had something real, Martin," she said quietly. "We all believed in your vision. But you chose a computer program over the people who actually cared about you."
+      </p>
+
+      <h2>
+        The Glittering Collapse
+      </h2>
+
+      <p>
+        The business collapsed within six months. Investors pulled out when they discovered the extent of AI-generated communications. Suppliers fled to competitors. The media, led by Rachel's insider knowledge, tore apart the "fake empire built on artificial intelligence."
+      </p>
+
+      <img
+        src="../blog-images/the-man-who-made-things-shine/Image_The_Man_Who_Made_Things_Shine11.png"
+        alt="Description of image"
+        style="
+          width:50%;
+          max-width:350px;
+          border-radius:16px;
+          margin:30px auto;
+          display:block;
+        "
+      />
+
+      <p>
+        Martin found himself back in his one-bedroom flat, surrounded by glitter samples that had lost their magic. The Pikachu card - the real, glittering Pikachu card that started it all - sat on his desk, a reminder of what authentic inspiration felt like.
+      </p>
+
+      <h2>
+        The Real Magic
+      </h2>
+
+      <p>
+        For the first time in months, he closed his laptop without asking Chatty a single question. Instead, he picked up his phone and dialed Sarah's number. It went straight to voicemail.
+      </p>
+
+      <p>
+        "Sarah, it's Martin. I know you probably don't want to hear from me, but I wanted to say... you were right about everything. I got so caught up in having the perfect answer to every question that I forgot the most important thing - the people who were willing to take the journey with me when I didn't have any answers at all."
+      </p>
+
+      <img
+        src="../blog-images/the-man-who-made-things-shine/Image_The_Man_Who_Made_Things_Shine12.png"
+        alt="Description of image"
+        style="
+          width:50%;
+          max-width:350px;
+          border-radius:16px;
+          margin:30px auto;
+          display:block;
+        "
+      />
+
+      <p>
+        He paused, staring at the glitter card.
+      </p>
+
+      <p>
+        "Everything looks better when it glitters, but only when it's real. I forgot that. I'm sorry."
+      </p>
+
+      <p>
+        He hung up and sat in the silence of his flat, truly alone for the first time since Tokyo. But somehow, it felt like the beginning of something new.
+      </p>
+
+      <p>
+        The card caught the light from his window, sparkling just as brilliantly as it had in that mysterious shop. Some magic, Martin realised, could never be artificially generated.
+      </p>
+    </article>
+
+    <footer>
+      <div>© <span id="year"></span> Martin’s Adventure</div>
+      <div>
+        <a href="../index.html">About</a> ·
+        <a href="../blog.html">Blog</a> ·
+        <a href="../index.html">Contact</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
